@@ -140,14 +140,54 @@ section h1, section h2 {
 .texto-sobre strong {
     color: #505e8b;      /* Destaca as palavras-chave com a cor do seu tema */
 }
-/* Quando a tela for menor que 768px (celulares) */
+/* --- AJUSTE PARA CELULAR (RESPONSIVIDADE) --- */
+
 @media (max-width: 768px) {
-    .seu-menu-lateral {
-        width: 100%; /* Ocupa a largura toda */
-        position: relative; /* Para de flutuar na lateral */
+    /* 1. Faz o container ficar em coluna (menu em cima, conteúdo embaixo) */
+    .container-geral {
+        flex-direction: column;
     }
-    
-    .seu-conteudo-principal {
-        margin-left: 0; /* Remove o espaço que era para o menu */
+
+    /* 2. Ajusta a sidebar para o topo */
+    .sidebar {
+        width: 100%;        /* Ocupa a largura total */
+        height: auto;       /* Altura se ajusta aos itens */
+        position: relative; /* Para de flutuar sobre o texto */
+        padding: 20px 10px;
+    }
+
+    .perfil {
+        width: 100px;       /* Foto um pouco menor no celular */
+        height: 100px;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 15px;
+    }
+
+    /* 3. Faz os links do menu ficarem lado a lado ou em lista menor */
+    .sidebar ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;    /* Se não couber, pula linha */
+    }
+
+    .sidebar ul li a {
+        padding: 10px 15px;
+    }
+
+    /* 4. Remove a margem esquerda do conteúdo */
+    .conteudo {
+        margin-left: 0;     /* O conteúdo não precisa mais desviar da barra */
+        width: 100%;        /* Ocupa a tela toda */
+        padding: 20px;      /* Diminui o respiro lateral para ganhar espaço */
+    }
+
+    section {
+        max-width: 100%;
+    }
+
+    .projeto-card {
+        padding: 20px;      /* Card um pouco menor */
     }
 }
