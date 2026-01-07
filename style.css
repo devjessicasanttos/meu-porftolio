@@ -140,3 +140,14 @@ section h1, section h2 {
 .texto-sobre strong {
     color: #505e8b;      /* Destaca as palavras-chave com a cor do seu tema */
 }
+/* Quando a tela for menor que 768px (celulares) */
+@media (max-width: 768px) {
+    .seu-menu-lateral {
+        width: 100%; /* Ocupa a largura toda */
+        position: relative; /* Para de flutuar na lateral */
+    }
+    
+    .seu-conteudo-principal {
+        margin-left: 0; /* Remove o espaço que era para o menu */
+    }
+}
